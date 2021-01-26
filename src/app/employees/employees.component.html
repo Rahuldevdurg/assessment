@@ -1,0 +1,60 @@
+
+
+<div class="container text-center">
+    <h2 style="letter-spacing: 2px;">EMPLOYEES DETAIL </h2>
+</div><br><br>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <select id="inputState" class="form-control" >
+          <option selected >Department</option>
+            <option >Chemistry</option>
+            <option >Phisics</option>
+            <option >Computer</option>
+           
+          </select>
+      </div>
+      <div class="col-md-9">
+        <div class="form-group form-inline">
+            <input  class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="searchText"  style="width:350px" >
+            
+            <button class="btn btn-outline-success my-2 my-sm-0" style="margin-left:15px;" type="submit">Search</button>
+            <button type="button" class="btn btn-outline-primary " style="margin-left:25px;" (click)="refresh()">Reload Table Data</button>
+        </div>
+      </div>
+      
+    </div>
+</div>
+<br><br>
+<div class="container">
+<table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">NAME</th>
+        <th scope="col">AGE</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">DEPARTMENT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employee | filter:searchText">
+        <td>{{emp.name}}</td>
+        <td>{{emp.age}}</td>
+        <td>{{emp.email}}</td>
+        <td>{{emp.department}}</td>
+        
+      </tr>
+     
+      
+    </tbody> 
+  </table>
+
+  <table>
+    <tr>
+      <td colspan = "4"><b>{{'Number of employees in table  -- ' + employee.length}}</b></td>
+    </tr>
+  </table>
+</div>
+
+
