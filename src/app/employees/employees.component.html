@@ -1,6 +1,6 @@
 
 <!-- header  -->
-<div class="container text-center">
+<div class="container text-center" style="margin-top: 25px;">
     <h2 style="letter-spacing: 2px;">EMPLOYEES DETAIL </h2>
 </div><br><br>
 
@@ -19,7 +19,7 @@
       </div>
       <div class="col-md-9">
         <div class="form-group form-inline">
-            <input  class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="searchText"  style="width:350px" >
+          <i class="fa fa-search" aria-hidden="true"><input  class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="searchText"  style="width:350px" ></i>
             
             
             <button type="button" class="btn btn-outline-primary " style="margin-left:25px;" (click)="refresh()">Reload Table Data</button>
@@ -28,16 +28,26 @@
       
     </div>
 </div>
-<br><br>
+<br>
+
 
 <!-- Table for employee detail -->
 <div class="container">
+
+  <!-- counting number of employees -->
+<table>
+  <tr>
+    <td colspan = "4"><b>{{'Number of employees in table  -- ' + employee.length}}</b></td>
+  </tr>
+</table>
+
+
 <table class="table table-hover table-bordered">
     <thead>
       <tr>
         <th scope="col">NAME</th>
         <th scope="col">AGE</th>
-        <th scope="col">EMAIL</th>
+        <th scope="col" >EMAIL</th>
         <th scope="col">DEPARTMENT</th>
       </tr>
     </thead>
@@ -53,12 +63,7 @@
       
     </tbody> 
   </table>
-<!-- counting number of employees -->
-  <table>
-    <tr>
-      <td colspan = "4"><b>{{'Number of employees in table  -- ' + employee.length}}</b></td>
-    </tr>
-  </table>
+
 </div>
 
 

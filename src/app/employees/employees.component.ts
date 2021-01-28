@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { IEmployees } from '../model/employee.interface';
+
 
 @Component({
   selector: 'app-employees',
@@ -8,10 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeesComponent implements OnInit {
 
-  constructor() { };
+  constructor() {  };
     searchText: string="";
+    sortDir = 1;//1= 'ASE' -1= DSC
+  
+    
 
-      employee = [
+      employee : IEmployees [] = [
 
         { 
          name: "Employee One",
@@ -33,7 +38,7 @@ export class EmployeesComponent implements OnInit {
          email: "Three@gmail.com",
          department: ["Physics", "Chemistry"],
        },
-     
+
        {
          name: "Employee Four",
          age: 60,
@@ -69,6 +74,8 @@ export class EmployeesComponent implements OnInit {
        refresh(): void {
         window.location.reload();
     }
-     
-     }
-     
+  
+    
+
+  
+    }
